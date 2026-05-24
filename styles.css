@@ -51,6 +51,7 @@ body {
 }
 
 @media screen and (max-width: 576px) {
+
   .main-info,
   .contact_info_container {
     flex-direction: column;
@@ -71,6 +72,12 @@ body {
 
 /* Contact info styles */
 
+.contact_info_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .contact-info__header,
 .contact-info__sub-header {
   text-align: center;
@@ -89,13 +96,13 @@ body {
 }
 
 .contact-info__block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex: 1;
 }
 
 .contact-info__block--center {
+  display: flex;
   justify-content: center;
+  flex: 1;
 }
 
 .contact-info__item {
@@ -132,6 +139,27 @@ body {
   object-fit: cover;
   border: 3px solid;
   border-color: var(--text-decoration-color);
+}
+
+.contact-info__avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-info__avatar-wrapper::after {
+  content: "Please enroll me in the course 🙏";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  transition: opacity 0.2s;
+}
+
+.contact-info__avatar-wrapper:hover::after {
+  opacity: 1;
 }
 
 /* Intro and skills styles */
